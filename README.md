@@ -244,10 +244,320 @@ The app automatically uses local fallback data when DummyJSON API is unavailable
 
 MIT License - feel free to use this project for personal or commercial purposes.
 
-## 🤝 Support
+## MADE WITH AI TOOLS:
+- Github Copilot
+- Codex
+- Google AI studio
+- Chat gpt and gemini for minor fixes
 
-For issues or questions, please contact: support@curatedessentials.com
+### Process
+Starting prompt:
+====================================================
+MANDATORY ROUTES CHECKLIST
+==========================
 
+The following routes are REQUIRED.
+
+Do not omit any route.
+
+The generated project is considered incomplete if any route is missing.
+
+Route Structure:
+
+/
+
+Home Page
+
+/products
+
+Product Listing Page
+
+/products/[id]
+
+Product Detail Page
+
+/cart
+
+Cart Page
+
+/login
+
+Login Page
+
+/about
+
+About Us Page
+
+/contact
+
+Contact Us Page
+
+====================================================
+HOME PAGE
+=========
+
+Route:
+
+/
+
+Must include:
+
+Hero Section
+
+Featured Products
+
+Popular Categories
+
+Why Choose Us
+
+Benefits Section
+
+CTA Section
+
+SEO Metadata
+
+====================================================
+PRODUCT LISTING PAGE
+====================
+
+Route:
+
+/products
+
+Must include:
+
+Search
+
+Category Filter
+
+Sort Functionality
+
+Product Grid
+
+Pagination or Infinite Scroll
+
+Loading States
+
+Error States
+
+Empty States
+
+SEO Metadata
+
+====================================================
+PRODUCT DETAIL PAGE
+===================
+
+Route:
+
+/products/[id]
+
+Must include:
+
+Product Images
+
+Gallery
+
+Description
+
+Price
+
+Discount
+
+Rating
+
+Stock
+
+Brand
+
+Category
+
+Specifications
+
+Related Products
+
+Add To Cart
+
+Dynamic Metadata
+
+Static Generation
+
+SEO Optimization
+
+====================================================
+CART PAGE
+=========
+
+Route:
+
+/cart
+
+Must include:
+
+Cart Items
+
+Quantity Controls
+
+Remove Item
+
+Subtotal
+
+Discount
+
+Final Total
+
+Persisted State
+
+Responsive Design
+
+====================================================
+LOGIN PAGE
+==========
+
+Route:
+
+/login
+
+Must include:
+
+Email Field
+
+Password Field
+
+Local Authentication
+
+Guest User Option
+
+Validation
+
+Error Handling
+
+Persisted Session
+
+====================================================
+ABOUT PAGE
+==========
+
+Route:
+
+/about
+
+Must include:
+
+Company Introduction
+
+Our Story
+
+Mission Statement
+
+Vision Statement
+
+Core Values
+
+Why Customers Choose Us
+
+Team Section (mock data acceptable)
+
+SEO Metadata
+
+Responsive Layout
+
+Semantic HTML
+
+====================================================
+CONTACT PAGE
+============
+
+Route:
+
+/contact
+
+Must include:
+
+Contact Information
+
+Address Section
+
+Email Section
+
+Phone Section
+
+Contact Form
+
+Name Field
+
+Email Field
+
+Message Field
+
+Client-side Validation
+
+Success State
+
+Error State
+
+SEO Metadata
+
+Responsive Layout
+
+Semantic HTML
+
+====================================================
+FINAL VALIDATION
+================
+
+Before finishing code generation verify:
+
+✓ Home Page Exists
+
+✓ Product Listing Page Exists
+
+✓ Product Detail Page Exists
+
+✓ Cart Page Exists
+
+✓ Login Page Exists
+
+✓ About Page Exists
+
+✓ Contact Page Exists
+
+✓ RTK Implemented
+
+✓ Product API Integrated
+
+✓ SEO Implemented
+
+✓ Dynamic Metadata Implemented
+
+✓ generateStaticParams Implemented
+
+✓ Suspense Implemented
+
+✓ Skeleton Loaders Implemented
+
+✓ Accessibility Implemented
+
+✓ Responsive Design Implemented
+
+✓ README Generated
+
+Do not finish generation until every checklist item is satisfied.
+
+Now issues:
+- No auth based middleware implemented
+- Styles not getting applied
+- Missing files
+- Logical issues like cart not getting emptied, no rba, issues with search/filters etc
+- Responsiveness issues
+
+# Resolution: Fixed individually using copilot and codex
+
+### Assumptions/Limitations:
+- No backend database
+- No data persistence
+- Login implemented based on static data
+- This assumes user would follow all the above defined steps in order to run the project
 ---
 
 **Built with ❤️ using Next.js, React, and TypeScript**
