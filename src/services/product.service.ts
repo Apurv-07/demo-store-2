@@ -308,10 +308,12 @@ export class ProductService {
   /**
    * Get all products with optional query parameters (limit, skip, etc.)
    */
-  static async getProducts(params?: { limit?: number; skip?: number }): Promise<ProductsResponse> {
+  static async getProducts(params?: { limit?: number; skip?: number, order?: string }): Promise<ProductsResponse> {
     const limit = params?.limit ?? 30;
     const skip = params?.skip ?? 0;
-    const url = `${BASE_URL}/products?limit=${limit}&skip=${skip}`;
+    const order = params?.order ?? "asc";
+    const url = `${BASE_URL}/products?limit=${limit}&skip=${skip}&order=${order}`;
+    console.log(url)
     try {
       return await this.fetchWithErrorHandling<ProductsResponse>(url);
     } catch (error) {

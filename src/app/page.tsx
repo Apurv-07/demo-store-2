@@ -29,10 +29,11 @@ export default async function HomePage() {
   try {
     const [cats, productsRes] = await Promise.all([
       ProductService.getCategories(),
-      ProductService.getProducts({ limit: 8 }),
+      ProductService.getProducts({ limit: 8, skip: 186, order: "desc" }),
     ]);
+    // console.log("123", cats, productsRes);
     categories = cats.slice(0, 10);
-    featuredProducts = productsRes.products;
+    featuredProducts = productsRes.products.reverse();
   } catch (err) {
     console.error("Home data fetch failed server-side", err);
     errorHeader = "Unable to load latest items. Utilizing static corporate backup grids.";
@@ -42,7 +43,7 @@ export default async function HomePage() {
     <div className="space-y-16 pb-16">
       {/* 1. Hero Section */}
       <section className="relative bg-slate-900 text-white rounded-3xl overflow-hidden py-16 sm:py-24 px-6 sm:px-12 lg:px-16 shadow-xl">
-        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-35 pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] bg-size-[16px_16px] opacity-35 pointer-events-none" />
         <HeroSearch />
       </section>
 
@@ -132,10 +133,11 @@ export default async function HomePage() {
 
         <Suspense fallback={<ProductGridSkeleton count={8} />}>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => {
+            {featuredProducts.map((product, index) => {
               const discountedPrice = product.price * (1 - product.discountPercentage / 100);
               return (
-                <Link
+                <>
+                {index<4 && <Link
                   key={product.id}
                   href={`/products/${product.id}`}
                   className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-gray-300 transition-all duration-300 flex flex-col h-full group"
@@ -212,7 +214,8 @@ export default async function HomePage() {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </Link>}
+                </>
               );
             })}
           </div>
